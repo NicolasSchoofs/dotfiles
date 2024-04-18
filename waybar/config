@@ -77,7 +77,7 @@
     "format-muted": " 󰝟 ",
     "format-icons": {
       "headphone": "",
-      "default": ["󰝟", ""],
+      "default": ["", "", ""],
     },
     "tooltip": false,
     "on-click": "~/.config/waybar/custom-scripts/audio_changer.py",

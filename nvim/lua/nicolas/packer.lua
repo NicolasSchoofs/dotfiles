@@ -58,10 +58,18 @@ return require('packer').startup(function(use)
   use("MunifTanjim/prettier.nvim")
   use("lewis6991/gitsigns.nvim")
   use("lervag/vimtex")
+  use("folke/trouble.nvim")
   use {
   'nvim-lualine/lualine.nvim',
   requires = { 'nvim-tree/nvim-web-devicons', opt = true }
 }
   use("vimwiki/vimwiki")
+use {
+  "startup-nvim/startup.nvim",
+  requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
+  config = function()
+    require"startup".setup()
+  end
+}
 
 end)
