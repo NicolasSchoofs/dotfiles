@@ -13,7 +13,15 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     spec = "theprimeagen.lazy",
-    change_detection = { notify = false }
+    change_detection = { notify = false },
+    -- ensure plenary.nvim uses hererocks (Lua 5.1 local environment)
+    overrides = {
+        ["nvim-lua/plenary.nvim"] = {
+            opts = {
+                rocks = { hererocks = true, enabled = true },
+            },
+        },
+    },
 })
 --[[
 require("lazy").setup({

@@ -20,15 +20,26 @@ local Group = augroup('nicolas', {})
 local autocmd = vim.api.nvim_create_autocmd
 local yank_group = augroup('HighlightYank', {})
 
+vim.opt.termguicolors = true
+
 function R(name)
     require("plenary.reload").reload_module(name)
 end
 
 vim.filetype.add({
     extension = {
+        bnd = "properties",
+        bndrun = "properties",
         templ = 'templ',
     }
 })
+
+vim.filetype.add({
+  extension = {
+    axaml = "xml",
+  },
+})
+
 
 autocmd('TextYankPost', {
     group = yank_group,
